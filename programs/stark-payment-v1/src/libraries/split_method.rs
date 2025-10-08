@@ -4,7 +4,7 @@ use anchor_spl::token::{self, Token, TokenAccount, Transfer};
 declare_id!("BLAqFZF7PKcwPEKwsS2sXdzzjwxDCion3HkQtK54mgQS");
 
 #[program]
-pub mod stark_payment_v1 {
+pub mod split_method {
     use super::*;
 
     pub fn split(ctx: Context<Split>, amounts: Vec<u64>) -> Result<()> {
