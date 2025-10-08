@@ -1,17 +1,11 @@
 import * as anchor from "@coral-xyz/anchor";
 import { Program } from "@coral-xyz/anchor";
 import { SplitMethod } from "../target/types/split_method";
-import {
-  createMint,
-  createAccount,
-  getOrCreateAssociatedTokenAccount,
-  mintTo,
-  TOKEN_PROGRAM_ID,
-} from "@solana/spl-token";
+import { createMint, createAccount, getOrCreateAssociatedTokenAccount, mintTo, TOKEN_PROGRAM_ID } from "@solana/spl-token";
 import { assert } from "chai";
 
 
-describe("stark_payment_v1", async () => {
+describe("split_method", async () => {
 
   const connection = new anchor.web3.Connection("http://127.0.0.1:8899", "confirmed");
 
