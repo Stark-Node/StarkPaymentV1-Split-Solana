@@ -1,12 +1,13 @@
 [package]
-name = "stark-payment-v1"
+name = "stark-pay-split"
 version = "0.1.0"
 description = "Created with Anchor"
 edition = "2021"
 
 [lib]
 crate-type = ["cdylib", "lib"]
-name = "stark_payment_v1"
+name = "stark_pay_split"
+path = "src/lib.rs"
 
 [features]
 default = []
@@ -14,9 +15,10 @@ cpi = ["no-entrypoint"]
 no-entrypoint = []
 no-idl = []
 no-log-ix-name = []
-idl-build = ["anchor-lang/idl-build"]
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
 
 
 [dependencies]
-anchor-lang = "0.31.1"
+anchor-lang = "0.32.0"
+anchor-spl = "0.32.0"
 
