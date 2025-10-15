@@ -49,8 +49,13 @@ pub mod stark_pay_split {
             ErrorCode::LengthMismatch
         );
 
+        let mut total_percentage = 0;
+        for i in 0..=percentages.len() {
+            total_percentage += percentages[i];
+        }
+
         for (i, receiver_account_info) in ctx.remaining_accounts.iter().enumerate() {
-            let amount_to_send = (amount * percentages[i]) / 100;
+            let amount_to_send = (amount * percentages[i]) / total_percentage;
 
             let cpi_accounts = Transfer {
                 from: payer_token_account.to_account_info(),
